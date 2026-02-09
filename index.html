@@ -1,7 +1,296 @@
-echo "# Black-Velvet-Stories" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/nikoneem46-max/Black-Velvet-Stories.git
-git push -u origin main
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A reading app built to amplify and monetize Black indie authors." />
+  <title>Black Velvet Stories — Where Black Stories Reign</title>
+  <style>
+    :root{
+      --bg:#0b0710;
+      --card:#130a1d;
+      --text:#f4effb;
+      --muted:#cdbfe6;
+      --accent:#8b5cf6; /* purple */
+      --accent2:#f5c542; /* gold */
+      --stroke:rgba(255,255,255,.12);
+      --shadow:0 20px 60px rgba(0,0,0,.55);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 30% 10%, rgba(139,92,246,.25), transparent 60%),
+                  radial-gradient(900px 700px at 80% 20%, rgba(245,197,66,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px;}
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:18px 0;
+    }
+    .brand{display:flex; gap:12px; align-items:center; text-decoration:none;}
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), rgba(245,197,66,.9));
+      box-shadow: var(--shadow);
+    }
+    .brand strong{font-size:16px; letter-spacing:.2px}
+    nav{display:flex; gap:16px; flex-wrap:wrap;}
+    nav a{opacity:.9; text-decoration:none; font-size:14px}
+    nav a:hover{opacity:1; text-decoration:underline}
+
+    .hero{padding:40px 0 26px; display:grid; grid-template-columns: 1.25fr .75fr; gap:18px; align-items:stretch;}
+    @media (max-width: 860px){.hero{grid-template-columns:1fr;}}
+
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+    }
+    .kicker{display:inline-flex; gap:8px; align-items:center; font-size:12px; opacity:.95; color:var(--muted)}
+    .dot{width:8px; height:8px; border-radius:999px; background:var(--accent2)}
+    h1{margin:10px 0 10px; font-size:42px; line-height:1.1;}
+    @media (max-width: 520px){h1{font-size:34px}}
+    .sub{font-size:16px; color:var(--muted); margin:0 0 18px;}
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:10px}
+    .btn{
+      appearance:none; border:none; cursor:pointer; text-decoration:none;
+      padding:12px 14px; border-radius:14px; font-weight:650; font-size:14px;
+      display:inline-flex; align-items:center; gap:10px;
+      transition: transform .08s ease, opacity .2s ease;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btnPrimary{background:linear-gradient(135deg,var(--accent), rgba(245,197,66,.85)); color:#12081c;}
+    .btnGhost{background:rgba(255,255,255,.06); color:var(--text); border:1px solid var(--stroke)}
+
+    .statGrid{display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-top:16px}
+    @media (max-width: 520px){.statGrid{grid-template-columns:1fr;}}
+    .stat{padding:12px; border-radius:16px; border:1px solid var(--stroke); background:rgba(0,0,0,.18)}
+    .stat b{display:block; font-size:18px}
+    .stat span{color:var(--muted); font-size:12px}
+
+    .mini{display:grid; gap:12px}
+    .tag{
+      display:flex; justify-content:space-between; gap:10px; align-items:center;
+      padding:12px; border:1px solid var(--stroke); border-radius:16px;
+      background:rgba(0,0,0,.18)
+    }
+    .pill{font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--stroke); background:rgba(255,255,255,.05); color:var(--muted)}
+
+    section{padding:26px 0}
+    h2{margin:0 0 10px; font-size:26px}
+    p{margin:0 0 10px; color:var(--muted)}
+
+    .grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;}
+    @media (max-width: 860px){.grid{grid-template-columns:1fr;}}
+    .card{padding:16px; border-radius:16px; border:1px solid var(--stroke); background:rgba(0,0,0,.18)}
+    .card h3{margin:0 0 6px; font-size:16px; color:var(--text)}
+    .card p{margin:0; font-size:14px}
+
+    .pricing{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width: 860px){.pricing{grid-template-columns:1fr;}}
+    .price{
+      padding:18px; border-radius:16px; border:1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(139,92,246,.16), rgba(0,0,0,.18));
+    }
+    .price h3{margin:0 0 2px}
+    .money{font-size:28px; font-weight:800; margin:8px 0}
+    ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+
+    .formRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    input, select{
+      padding:12px 12px; border-radius:14px; border:1px solid var(--stroke);
+      background:rgba(255,255,255,.05); color:var(--text);
+      min-width:220px; flex:1;
+    }
+    input::placeholder{color:rgba(205,191,230,.8)}
+
+    footer{padding:28px 0 40px; color:var(--muted); font-size:12px}
+    .fine{opacity:.85}
+    .hr{height:1px; background:var(--stroke); margin:18px 0}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#top">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <strong>Black Velvet Stories</strong><br>
+          <span style="font-size:12px; color:var(--muted)">All Black indie authors • All genres • Paid fairly</span>
+        </div>
+      </a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#monetization">Monetization</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#authors">Founding Authors</a>
+      </nav>
+    </header>
+
+    <main id="top" class="hero">
+      <div class="panel">
+        <div class="kicker"><span class="dot"></span> A reading app + marketplace for Black indie authors</div>
+        <h1>Black stories. Every genre. Creators paid — no funny math. 👑</h1>
+        <p class="sub">A premium reading platform built exclusively for Black indie authors — romance, sci‑fi, fantasy, thrillers, poetry, dark romance, and everything in between. Read freely. Earn fairly. Build community.</p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="#authors">Join the Founding Authors Waitlist →</a>
+          <a class="btn btnGhost" href="#monetization">See how payouts work</a>
+        </div>
+
+        <div class="statGrid" aria-label="quick stats">
+          <div class="stat"><b>70%</b><span>Guaranteed author revenue share</span></div>
+          <div class="stat"><b>2 Tiers</b><span>Standard + Spicy Vault 😈</span></div>
+          <div class="stat"><b>Hybrid</b><span>Subscriptions + Coins</span></div>
+        </div>
+      </div>
+
+      <div class="panel mini">
+        <div class="tag"><div>
+          <b>Genres supported</b><br><span style="color:var(--muted); font-size:13px">Romance • Dark Romance • Paranormal • Sci‑Fi • Fantasy • Thriller</span>
+        </div><span class="pill">Flexible</span></div>
+
+        <div class="tag"><div>
+          <b>Community tools</b><br><span style="color:var(--muted); font-size:13px">Comments, likes, author follows, notifications</span>
+        </div><span class="pill">Built‑in</span></div>
+
+        <div class="tag"><div>
+          <b>Creator control</b><br><span style="color:var(--muted); font-size:13px">Set pricing, schedule releases, view earnings</span>
+        </div><span class="pill">Transparent</span></div>
+      </div>
+    </main>
+
+    <section id="features">
+      <h2>What the app does ✨</h2>
+      <p>We start with an MVP that feels premium: clean reading, easy discovery, and tools that help authors earn — not beg.</p>
+
+      <div class="grid">
+        <div class="card"><h3>Reader experience</h3><p>Fast reading view, bookmarks, favorites, genre filters, trending lists, and chapter notifications.</p></div>
+        <div class="card"><h3>Author dashboard</h3><p>Upload books/chapters, schedule drops, see reads + earnings, and build a following.</p></div>
+        <div class="card"><h3>Community</h3><p>Comments, likes, creator profiles, and optional book clubs (Phase 2).</p></div>
+      </div>
+    </section>
+
+    <section id="monetization">
+      <h2>Monetization that respects readers & creators 💸</h2>
+      <p><b>Read first. Get hooked. Then decide.</b> Black Velvet Stories is designed to feel generous, transparent, and fair.</p>
+
+      <div class="grid">
+        <div class="card"><h3>First 5 chapters — always free</h3><p>Every book on the platform unlocks its first five chapters at no cost. No subscription. No coins. Just read.</p></div>
+        <div class="card"><h3>Coins after chapter 5</h3><p>Once you're invested, unlock additional chapters using coins or access them through a subscription.</p></div>
+        <div class="card"><h3>Creators earn 70%</h3><p>Every coin spent and every subscription read supports authors directly with a clear 70/30 split.</p></div>
+      </div>
+
+      <div class="hr"></div>
+      <p class="fine">No surprise paywalls. No confusing math. Readers choose how they support. Authors get paid fairly.</p>
+    </section>
+
+    <section id="pricing">
+      <h2>Reader access & pricing 🖤</h2>
+      <div class="pricing">
+        <div class="price">
+          <h3>Standard Subscription</h3>
+          <div class="money">$7.99<span style="font-size:14px; color:var(--muted)">/mo</span></div>
+          <ul>
+            <li>Unlimited reading</li>
+            <li>Access to exclusive stories</li>
+            <li>Early chapter drops</li>
+            <li>Community comments & follows</li>
+          </ul>
+        </div>
+        <div class="price" style="background: linear-gradient(180deg, rgba(245,197,66,.12), rgba(0,0,0,.18));">
+          <h3>Premium: Spicy Vault 😈</h3>
+          <div class="money">$12.99<span style="font-size:14px; color:var(--muted)">/mo</span></div>
+          <ul>
+            <li>Everything in Standard</li>
+            <li>Erotica • BDSM • Dark romance • Supernatural heat</li>
+            <li>Premium exclusives & early releases</li>
+            <li>Opt-in adult content</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid" style="margin-top:14px">
+        <div class="card"><h3>Welcome bonus 🎁</h3><p>New readers receive <b>150 free coins</b> when they sign up — no credit card required.</p></div>
+        <div class="card"><h3>Coin packs</h3><p>$1.99 → 300 coins<br>$4.99 → 500 coins<br>$9.99 → 800 coins</p></div>
+        <div class="card"><h3>Chapter pricing</h3><p>Chapters 1–5 are free.<br>Chapters 6+ unlock for <b>35 coins</b> each.</p></div>
+      </div>
+    </section>
+
+    <section id="authors" class="panel" style="padding:22px;">
+      <h2>Founding Authors waitlist 👑</h2>
+      <p>We’re launching with 10–20 Black indie authors across all genres. Founding Authors receive a permanent badge, higher early visibility, and priority support — while keeping full rights to their work.</p>
+
+      <form id="waitlist" onsubmit="return submitWaitlist(event)">
+        <div class="formRow">
+          <input name="name" placeholder="Your name" required />
+          <input name="email" type="email" placeholder="Email" required />
+        </div>
+        <div class="formRow">
+          <select name="role" required>
+            <option value="" disabled selected>I’m joining as…</option>
+            <option>Author</option>
+            <option>Reader</option>
+            <option>Both</option>
+          </select>
+          <input name="genres" placeholder="Genres (e.g., romance, paranormal, sci‑fi)" />
+        </div>
+        <div class="ctaRow">
+          <button class="btn btnPrimary" type="submit">Join waitlist</button>
+          <a class="btn btnGhost" href="mailto:hello@yourdomain.com">Contact</a>
+        </div>
+        <p id="msg" class="fine" style="margin-top:10px"></p>
+      </form>
+      <p class="fine">Tip: Replace <b>hello@yourdomain.com</b> with your real email and connect this form to Mailchimp/ConvertKit or a simple Firebase function.</p>
+    </section>
+
+    <footer>
+      <div class="hr"></div>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center">
+        <div>© <span id="year"></span> Black Indie Reads • Built with love + receipts.</div>
+        <div class="fine">Privacy • Terms • Content Guidelines</div>
+      </div>
+        <section id="about">
+      <h2>About Black Velvet Stories</h2>
+      <p><strong>Black Velvet Stories was created from a simple belief:</strong> Black indie authors deserve a beautiful space to tell their stories, be seen, and be paid fairly.</p>
+      <p>For too long, many writers have had to fight algorithms, confusing payout systems, and platforms that didn’t truly center their voices. This space was built to change that — not just another reading app, but a storytelling home where creativity, community, and fair opportunity come first.</p>
+      <p>Readers aren’t just consumers here. They discover new voices, support authors directly, and become part of a culture that values storytelling deeply.</p>
+
+      <h3>Meet the Founder</h3>
+      <p>Black Velvet Stories was founded by an indie author who understands both sides of the journey — the excitement of writing and the challenges of navigating platforms that don’t always support creators the way they should.</p>
+      <p>This platform grew from late‑night writing sessions, conversations with other indie authors, and the desire to build something softer, fairer, and more human.</p>
+
+      <h3>Where We’re Going</h3>
+      <p>The vision extends beyond a reading app. Future plans include publishing opportunities, editorial support, expanded distribution, and a growing creative ecosystem centered on storytelling.</p>
+      <p><strong>Honor the storyteller. Support the reader. Build community.</strong></p>
+    </section>
+
+  </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function submitWaitlist(e){
+      e.preventDefault();
+      const form = e.target;
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      // Demo-only: shows success message. Connect to Mailchimp/ConvertKit/Firebase for real storage.
+      const msg = document.getElementById('msg');
+      msg.textContent = `You're in! We'll reach out at ${data.email}. (Demo form — connect to your email list next.)`;
+      form.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
