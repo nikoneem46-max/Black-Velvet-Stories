@@ -122,18 +122,21 @@
   <div class="wrap">
     <header>
       <a class="brand" href="#top">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
+        <div .logo{
+  width:40px; height:40px; border-radius:12px;
+  background: radial-gradient(circle at 30% 30%, rgba(139,92,246,.95), rgba(139,92,246,.25) 55%, rgba(245,197,66,.20) 85%);
+  box-shadow: 0 0 22px rgba(139,92,246,.55), 0 10px 30px rgba(0,0,0,.55);}        <div>
           <strong>Black Velvet Stories</strong><br>
           <span style="font-size:12px; color:var(--muted)">All Black indie authors • All genres • Paid fairly</span>
         </div>
       </a>
-      <nav>
-        <a href="#features">Features</a>
-        <a href="#monetization">Monetization</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#authors">Founding Authors</a>
-      </nav>
+     <nav>
+  <a href="#about">About</a>
+  <a href="#features">Features</a>
+  <a href="#monetization">Monetization</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#authors">Founding Authors</a>
+</nav>
     </header>
 
     <main id="top" class="hero">
@@ -245,7 +248,7 @@
           <input name="genres" placeholder="Genres (e.g., romance, paranormal, sci‑fi)" />
         </div>
         <div class="ctaRow">
-          <button class="btn btnPrimary" type="submit">Join waitlist</button>
+         <button class="btn btnPrimary" type="submit">Join the Launch List</button>
           <a class="btn btnGhost" href="mailto:hello@yourdomain.com">Contact</a>
         </div>
         <p id="msg" class="fine" style="margin-top:10px"></p>
@@ -259,23 +262,32 @@
         <div>© <span id="year"></span> Black Indie Reads • Built with love + receipts.</div>
         <div class="fine">Privacy • Terms • Content Guidelines</div>
       </div>
-        <section id="about">
-      <h2>About Black Velvet Stories</h2>
-      <p><strong>Black Velvet Stories was created from a simple belief:</strong> Black indie authors deserve a beautiful space to tell their stories, be seen, and be paid fairly.</p>
-      <p>For too long, many writers have had to fight algorithms, confusing payout systems, and platforms that didn’t truly center their voices. This space was built to change that — not just another reading app, but a storytelling home where creativity, community, and fair opportunity come first.</p>
-      <p>Readers aren’t just consumers here. They discover new voices, support authors directly, and become part of a culture that values storytelling deeply.</p>
+       <section id="about">
+  <h2>About Black Velvet Stories 💜</h2>
+  <p><strong>Black Velvet Stories was created from a simple belief:</strong> Black indie authors deserve a beautiful space to tell their stories, be seen, and be paid fairly.</p>
+  <p>For too long, writers have had to fight algorithms, confusing payout systems, and platforms that didn’t truly center their voices. This space was built to change that — not just another reading app, but a storytelling home where creativity, community, and fair opportunity come first.</p>
+  <p>Readers aren’t just consumers here. They discover new voices, support authors directly, and become part of a culture that values storytelling deeply.</p>
 
+  <div class="grid" style="margin-top:14px">
+    <div class="card">
+      <h3>Our mission</h3>
+      <p>Honor the storyteller. Support the reader. Build community — with a premium reading experience and transparent payouts.</p>
+    </div>
+    <div class="card">
       <h3>Meet the Founder</h3>
-      <p>Black Velvet Stories was founded by an indie author who understands both sides of the journey — the excitement of writing and the challenges of navigating platforms that don’t always support creators the way they should.</p>
-      <p>This platform grew from late‑night writing sessions, conversations with other indie authors, and the desire to build something softer, fairer, and more human.</p>
+      <p>Founded by an indie author who understands both sides of the journey — the joy of creating and the frustration of platforms that don’t fully support creators.</p>
+    </div>
+    <div class="card">
+      <h3>Where we’re going</h3>
+      <p>Beyond reading: optional publishing support, professional editing, and a growing ecosystem that helps Black stories thrive.</p>
+    </div>
+  </div>
 
-      <h3>Where We’re Going</h3>
-      <p>The vision extends beyond a reading app. Future plans include publishing opportunities, editorial support, expanded distribution, and a growing creative ecosystem centered on storytelling.</p>
-      <p><strong>Honor the storyteller. Support the reader. Build community.</strong></p>
-    </section>
+  <p class="fine" style="margin-top:10px">Whether you’re here to read, write, or simply explore — you belong here. 🖤</p>
+</section>
 
   </footer>
-  </div>
+<div>© <span id="year"></span> Black Velvet Stories • Built with love + receipts.</div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
