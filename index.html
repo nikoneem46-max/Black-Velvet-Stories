@@ -116,42 +116,101 @@
     footer{padding:28px 0 40px; color:var(--muted); font-size:12px}
     .fine{opacity:.85}
     .hr{height:1px; background:var(--stroke); margin:18px 0}
+
+    /* Mock UI blocks */
+    .mockWrap{display:grid; gap:14px}
+    .mockAuthor{display:flex; gap:12px; align-items:center; padding:12px; border-radius:16px; border:1px solid var(--stroke); background:rgba(0,0,0,.18)}
+    .mockAvatar{width:44px; height:44px; border-radius:14px; background:radial-gradient(circle at 30% 30%, rgba(139,92,246,.9), rgba(245,197,66,.25) 70%)}
+    .mockMeta{flex:1; min-width:180px}
+    .mockRow{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .stars{letter-spacing:2px; color:var(--accent2)}
+    .mockBooks{display:grid; gap:12px}
+    .mockBook{display:flex; gap:12px; padding:12px; border-radius:16px; border:1px solid var(--stroke); background:rgba(0,0,0,.18)}
+    .mockCover{width:74px; height:96px; border-radius:14px; background:linear-gradient(135deg, rgba(139,92,246,.7), rgba(0,0,0,.2)); border:1px solid var(--stroke)}
+    .mockCover.alt{background:linear-gradient(135deg, rgba(245,197,66,.55), rgba(0,0,0,.2))}
+    .mockChapter{padding:12px; border-radius:16px; border:1px solid var(--stroke); background:rgba(0,0,0,.18)}
+    .mockCommentBox{margin-top:10px; padding:12px; border-radius:16px; border:1px solid var(--stroke); background:rgba(255,255,255,.03)}
+    .mockTextarea{width:100%; margin-top:10px; padding:12px; border-radius:14px; border:1px solid var(--stroke); background:rgba(255,255,255,.05); color:var(--text); resize:vertical; font-family:inherit}
+    .mockComments{margin-top:12px; display:grid; gap:10px}
+    .mockComment{padding:12px; border-radius:16px; border:1px solid var(--stroke); background:rgba(255,255,255,.03)}
+    /* Library preview */
+    .libRow{display:grid; gap:10px}
+    .libItem{display:flex; gap:12px; align-items:center; padding:12px; border-radius:16px; border:1px solid var(--stroke); background:rgba(0,0,0,.18)}
+    .libMeta{flex:1; min-width:180px}
+    .progress{height:10px; border-radius:999px; border:1px solid var(--stroke); background:rgba(255,255,255,.04); overflow:hidden; margin-top:8px}
+    .progress span{display:block; height:100%; background:linear-gradient(135deg, var(--accent), rgba(245,197,66,.75))}
+    .shelfTabs{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .shelfGrid{display:grid; grid-template-columns:repeat(3, 1fr); gap:12px}
+    @media (max-width: 860px){.shelfGrid{grid-template-columns:1fr;}}
+    .shelfCard{display:flex; gap:12px; align-items:center; padding:12px; border-radius:16px; border:1px solid var(--stroke); background:rgba(255,255,255,.03)}
+    .searchBar{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .filterRow{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .miniShelf{display:grid; gap:10px}
+    .miniBook{display:flex; gap:10px; align-items:center; padding:10px; border-radius:14px; border:1px solid var(--stroke); background:rgba(255,255,255,.03)}
+    .miniCover{width:44px; height:56px; border-radius:12px; border:1px solid var(--stroke); background:linear-gradient(135deg, rgba(139,92,246,.6), rgba(0,0,0,.2))}
+    .miniCover.alt{background:linear-gradient(135deg, rgba(245,197,66,.5), rgba(0,0,0,.2))}
+
+    /* Book detail preview */
+    .bookHeader{display:flex; gap:14px; flex-wrap:wrap; align-items:stretch}
+    .bookCover{width:110px; height:150px; border-radius:16px; border:1px solid var(--stroke); background:linear-gradient(135deg, rgba(139,92,246,.55), rgba(245,197,66,.18));}
+    .bookMeta{flex:1; min-width:240px}
+    .review{padding:10px; border-radius:14px; border:1px solid var(--stroke); background:rgba(255,255,255,.03)}
+    .chapList{display:grid; gap:10px; margin-top:10px}
+    .chapItem{display:flex; gap:10px; align-items:center; padding:10px; border-radius:14px; border:1px solid var(--stroke); background:rgba(255,255,255,.03)}
+    .chapItem.locked{opacity:.92}
+    .chapNum{width:30px; height:30px; border-radius:10px; display:grid; place-items:center; border:1px solid var(--stroke); background:rgba(0,0,0,.18); font-weight:800}
+    .chapText{flex:1; min-width:160px}
+
+    /* Reader view preview */
+    .readerTop{display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+    .readerControls{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .readerBody{padding:12px; border-radius:16px; border:1px solid var(--stroke); background:rgba(0,0,0,.18)}
+    .readerBottom{display:flex; gap:12px; align-items:center}
+    .seg{display:flex; gap:0; border-radius:999px; overflow:hidden; border:1px solid var(--stroke); background:rgba(255,255,255,.05)}
+    .segBtn{appearance:none; border:none; cursor:pointer; padding:10px 12px; font-weight:750; font-size:13px; color:var(--muted); background:transparent}
+    .segBtn.active{color:#12081c; background:linear-gradient(135deg,var(--accent), rgba(245,197,66,.85))}
+
+    /* Profile preview */
+    #profile .card{min-height:140px}
+
+    footer a{color:var(--muted); text-decoration:none}
+    footer a:hover{color:var(--text); text-decoration:underline}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <a class="brand" href="#top">
-        <div .logo{
-  width:40px; height:40px; border-radius:12px;
-  background: radial-gradient(circle at 30% 30%, rgba(139,92,246,.95), rgba(139,92,246,.25) 55%, rgba(245,197,66,.20) 85%);
-  box-shadow: 0 0 22px rgba(139,92,246,.55), 0 10px 30px rgba(0,0,0,.55);}        <div>
+        <div class="logo" aria-hidden="true"></div>
+        <div>
           <strong>Black Velvet Stories</strong><br>
           <span style="font-size:12px; color:var(--muted)">All Black indie authors • All genres • Paid fairly</span>
         </div>
       </a>
-     <nav>
-  <a href="#about">About</a>
-  <a href="#features">Features</a>
-  <a href="#monetization">Monetization</a>
-  <a href="#pricing">Pricing</a>
-  <a href="#authors">Founding Authors</a>
-</nav>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#reader">Reader View</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#author-dashboard">Author Dashboard</a>
+        <a href="#admin">Admin Dashboard</a>
+        <a href="#authors">Become an Author</a>
+      </nav>
     </header>
 
     <main id="top" class="hero">
       <div class="panel">
         <div class="kicker"><span class="dot"></span> A reading app + marketplace for Black indie authors</div>
-        <h1>Black stories. Every genre. Creators paid — no funny math. 👑</h1>
+        <h1>Black stories. Every genre. A reading home that feels like velvet. 💜📚</h1>
         <p class="sub">A premium reading platform built exclusively for Black indie authors — romance, sci‑fi, fantasy, thrillers, poetry, dark romance, and everything in between. Read freely. Earn fairly. Build community.</p>
 
         <div class="ctaRow">
-          <a class="btn btnPrimary" href="#authors">Join the Founding Authors Waitlist →</a>
-          <a class="btn btnGhost" href="#monetization">See how payouts work</a>
+          <a class="btn btnPrimary" href="#pricing">Start reading →</a>
+          <a class="btn btnGhost" href="#authors">Want to publish here?</a>
         </div>
 
         <div class="statGrid" aria-label="quick stats">
-          <div class="stat"><b>70%</b><span>Guaranteed author revenue share</span></div>
+          <div class="stat"><b>Fair Pay</b><span>Transparent creator earnings</span></div>
           <div class="stat"><b>2 Tiers</b><span>Standard + Spicy Vault 😈</span></div>
           <div class="stat"><b>Hybrid</b><span>Subscriptions + Coins</span></div>
         </div>
@@ -172,66 +231,532 @@
       </div>
     </main>
 
-    <section id="features">
-      <h2>What the app does ✨</h2>
-      <p>We start with an MVP that feels premium: clean reading, easy discovery, and tools that help authors earn — not beg.</p>
+    <section id="home">
+      <h2>Home feed preview 🖤</h2>
+      <p>What readers see when they open the app: a personalized home that makes it easy to keep reading and discover new stories.</p>
 
-      <div class="grid">
-        <div class="card"><h3>Reader experience</h3><p>Fast reading view, bookmarks, favorites, genre filters, trending lists, and chapter notifications.</p></div>
-        <div class="card"><h3>Author dashboard</h3><p>Upload books/chapters, schedule drops, see reads + earnings, and build a following.</p></div>
-        <div class="card"><h3>Community</h3><p>Comments, likes, creator profiles, and optional book clubs (Phase 2).</p></div>
+      <div class="grid" style="margin-top:14px">
+        <div class="card">
+          <h3>Continue Reading</h3>
+          <p>Pick up where you left off with one tap.</p>
+          <div class="libItem" style="margin-top:12px">
+            <div class="mockCover" aria-hidden="true"></div>
+            <div class="libMeta">
+              <b>Throne Beneath My Skin</b>
+              <div class="fine">Chapter 9 • 62% complete</div>
+              <div class="progress"><span style="width:62%"></span></div>
+            </div>
+            <button class="btn btnPrimary" type="button">Resume</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Trending right now</h3>
+          <p>Books readers can’t stop talking about.</p>
+          <div class="miniShelf" style="margin-top:12px">
+            <div class="miniBook"><div class="miniCover" aria-hidden="true"></div><div><b>Whisper in the Thorns</b><div class="fine">Dark romance • Trending</div></div></div>
+            <div class="miniBook"><div class="miniCover alt" aria-hidden="true"></div><div><b>Daughter of the Wolf Veil</b><div class="fine">Paranormal • Trending</div></div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>New drops</h3>
+          <p>Fresh chapters & new books from authors you follow.</p>
+          <div class="miniShelf" style="margin-top:12px">
+            <div class="miniBook"><div class="miniCover" aria-hidden="true"></div><div><b>Her AI Man</b><div class="fine">New chapter • Today</div></div></div>
+            <div class="miniBook"><div class="miniCover alt" aria-hidden="true"></div><div><b>The Unbothered Fairy</b><div class="fine">New book • This week</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <h3>Recommended for you</h3>
+        <p class="fine">Based on what you read, rate, and save to your Library. (Mock preview)</p>
+        <div class="shelfGrid" style="margin-top:12px">
+          <div class="shelfCard">
+            <div class="mockCover" aria-hidden="true"></div>
+            <div>
+              <b>Thorns Between Us</b>
+              <div class="fine">Because you like: Dark Romance</div>
+              <div class="mockRow" style="margin-top:8px">
+                <button class="btn btnPrimary" type="button">Read</button>
+                <button class="btn btnGhost" type="button">📚 Add</button>
+              </div>
+            </div>
+          </div>
+          <div class="shelfCard">
+            <div class="mockCover alt" aria-hidden="true"></div>
+            <div>
+              <b>The Dreaming Hour</b>
+              <div class="fine">Because you like: Paranormal</div>
+              <div class="mockRow" style="margin-top:8px">
+                <button class="btn btnPrimary" type="button">Read</button>
+                <button class="btn btnGhost" type="button">📚 Add</button>
+              </div>
+            </div>
+          </div>
+          <div class="shelfCard">
+            <div class="mockCover" aria-hidden="true"></div>
+            <div>
+              <b>Whisper in the Thorns</b>
+              <div class="fine">Because you like: Slow-burn</div>
+              <div class="mockRow" style="margin-top:8px">
+                <button class="btn btnPrimary" type="button">Read</button>
+                <button class="btn btnGhost" type="button">📚 Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="monetization">
-      <h2>Monetization that respects readers & creators 💸</h2>
-      <p><b>Read first. Get hooked. Then decide.</b> Black Velvet Stories is designed to feel generous, transparent, and fair.</p>
+    <section id="about">
+      <h2>About Black Velvet Stories 💜</h2>
+      <p><strong>Black Velvet Stories was created from a simple belief:</strong> Black indie authors deserve a beautiful space to tell their stories, be seen, and be paid fairly.</p>
+      <p>For too long, writers have had to fight algorithms, confusing payout systems, and platforms that didn’t truly center their voices. This space was built to change that — not just another reading app, but a storytelling home where creativity, community, and fair opportunity come first.</p>
 
-      <div class="grid">
-        <div class="card"><h3>First 5 chapters — always free</h3><p>Every book on the platform unlocks its first five chapters at no cost. No subscription. No coins. Just read.</p></div>
-        <div class="card"><h3>Coins after chapter 5</h3><p>Once you're invested, unlock additional chapters using coins or access them through a subscription.</p></div>
-        <div class="card"><h3>Creators earn 70%</h3><p>Every coin spent and every subscription read supports authors directly with a clear 70/30 split.</p></div>
+      <div class="grid" style="margin-top:14px">
+        <div class="card"><h3>Our mission</h3><p>Honor the storyteller. Support the reader. Build community — with a premium reading experience and transparent payouts.</p></div>
+        <div class="card"><h3>Meet the Founder</h3><p>Founded by an indie author who understands both sides of the journey — the joy of creating and the frustration of platforms that don’t fully support creators.</p></div>
+        <div class="card"><h3>Where we’re going</h3><p>Beyond reading: optional publishing support, professional editing, and a growing ecosystem that helps Black stories thrive.</p></div>
       </div>
 
-      <div class="hr"></div>
-      <p class="fine">No surprise paywalls. No confusing math. Readers choose how they support. Authors get paid fairly.</p>
+      <p class="fine" style="margin-top:10px">Whether you’re here to read, write, or simply explore — you belong here. 🖤</p>
+    </section>
+
+    <section id="features">
+      <h2>Features ✨</h2>
+      <div class="grid">
+        <div class="card"><h3>Reader experience</h3><p>Fast reading, bookmarks, library, search, and personalized recommendations.</p></div>
+        <div class="card"><h3>Community</h3><p>Comments on every chapter, likes, and reader profiles — plus author follows with notifications.</p></div>
+        <div class="card"><h3>Author profiles</h3><p>Browse an author’s books, tap <b>Follow</b> for updates, and leave <b>ratings</b> + reviews to support stories you love.</p></div>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <h3>Website preview (mock UI)</h3>
+        <p class="fine">This is a visual preview of how readers will interact with books and chapters. Buttons don’t save data yet.</p>
+
+        <div class="mockWrap" style="margin-top:12px">
+          <div class="mockAuthor">
+            <div class="mockAvatar" aria-hidden="true"></div>
+            <div class="mockMeta">
+              <div class="mockRow">
+                <b>Author: Nyla Rivers</b>
+                <span class="pill">Dark Romance</span>
+                <span class="pill">Paranormal</span>
+              </div>
+              <div class="mockRow" style="gap:8px">
+                <span class="stars" aria-label="4.6 out of 5">★★★★☆</span>
+                <span class="fine">4.6 (2,143 ratings)</span>
+              </div>
+            </div>
+            <button class="btn btnGhost" type="button">Follow</button>
+          </div>
+
+          <div class="mockBooks">
+            <div class="mockBook">
+              <div class="mockCover" aria-hidden="true"></div>
+              <div style="flex:1">
+                <div class="mockRow"><b>Throne Beneath My Skin</b> <span class="pill">Series</span></div>
+                <p class="fine" style="margin:6px 0 0">First 5 chapters free • Then coins/subscription</p>
+                <div class="mockRow" style="margin-top:10px">
+                  <button class="btn btnPrimary" type="button">Start Reading</button>
+                  <button class="btn btnGhost" type="button">📚 Add to Library</button>
+                  <button class="btn btnGhost" type="button">⭐ Rate</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mockBook">
+              <div class="mockCover alt" aria-hidden="true"></div>
+              <div style="flex:1">
+                <div class="mockRow"><b>Daughter of the Wolf Veil</b> <span class="pill">Paranormal</span></div>
+                <p class="fine" style="margin:6px 0 0">Readers can follow the author for new chapter drops</p>
+                <div class="mockRow" style="margin-top:10px">
+                  <button class="btn btnPrimary" type="button">Start Reading</button>
+                  <button class="btn btnGhost" type="button">📚 Add to Library</button>
+                  <button class="btn btnGhost" type="button">⭐ Rate</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mockChapter">
+            <div class="mockRow" style="justify-content:space-between">
+              <b>Chapter 6 — "The Mark"</b>
+              <span class="pill">Comments</span>
+            </div>
+            <p class="fine" style="margin-top:6px">At the end of each chapter, readers can react, suggest, and discuss — with spoiler protection.</p>
+
+            <div class="mockCommentBox">
+              <div class="mockRow" style="justify-content:space-between; align-items:center">
+                <b>Leave a comment</b>
+                <label class="fine" style="display:flex; gap:8px; align-items:center">
+                  <input type="checkbox" style="min-width:auto; flex:0" /> Mark as spoiler
+                </label>
+              </div>
+              <textarea class="mockTextarea" placeholder="Tell the author what you loved, your theory, or a suggestion..." rows="3"></textarea>
+              <div class="mockRow" style="justify-content:space-between; margin-top:10px">
+                <span class="fine">Be respectful • No hate • No doxxing</span>
+                <button class="btn btnPrimary" type="button">Post</button>
+              </div>
+            </div>
+
+            <div class="mockComments">
+              <div class="mockComment">
+                <div class="mockRow" style="justify-content:space-between">
+                  <b>@moonlitreader</b>
+                  <span class="fine">2m ago</span>
+                </div>
+                <p style="margin:8px 0 0; color:var(--text)">That ending?? 😭 I need the next chapter immediately. Also the mark is giving prophecy vibes.</p>
+                <div class="mockRow" style="margin-top:10px">
+                  <button class="btn btnGhost" type="button">Reply</button>
+                  <button class="btn btnGhost" type="button">👍 Like</button>
+                  <button class="btn btnGhost" type="button">Report</button>
+                </div>
+              </div>
+
+              <div class="mockComment">
+                <div class="mockRow" style="justify-content:space-between">
+                  <b>@inkandvelvet</b>
+                  <span class="fine">14m ago</span>
+                </div>
+                <p style="margin:8px 0 0; color:var(--text)"><span class="pill">Spoiler</span> I think the stranger is her mate… but I’m not ready for the reveal yet 😭</p>
+                <div class="mockRow" style="margin-top:10px">
+                  <button class="btn btnGhost" type="button">Reply</button>
+                  <button class="btn btnGhost" type="button">👍 Like</button>
+                  <button class="btn btnGhost" type="button">Report</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2>How reading works 💜</h2>
+      <p><b>Simple, reader‑first experience.</b> Black Velvet Stories focuses on enjoying books without confusing payout talk.</p>
+
+      <div class="grid">
+        <div class="card"><h3>First chapters free</h3><p>Every book starts with free preview chapters so you can explore before committing.</p></div>
+        <div class="card"><h3>Flexible reading</h3><p>Continue reading with coins or a subscription depending on the book.</p></div>
+        <div class="card"><h3>Support authors directly</h3><p>Follow your favorite writers, rate stories, and help great books grow.</p></div>
+      </div>
+    </section>
+
+    <section id="book">
+      <h2>Book detail + chapter preview 📖</h2>
+      <p>When a reader taps a book, they see the synopsis, ratings, reviews, and the chapter list — with early chapters open and later chapters locked until unlocked.</p>
+
+      <div class="card" style="margin-top:14px">
+        <div class="bookHeader">
+          <div class="bookCover" aria-hidden="true"></div>
+          <div class="bookMeta">
+            <div class="mockRow"><b style="font-size:18px">Throne Beneath My Skin</b> <span class="pill">Dark Romance</span> <span class="pill">Paranormal</span></div>
+            <div class="mockRow" style="gap:8px; margin-top:6px">
+              <span class="stars" aria-label="4.8 out of 5">★★★★★</span>
+              <span class="fine">4.8 (3,901 ratings)</span>
+            </div>
+            <p class="fine" style="margin-top:10px">A queen’s power wakes in the dark — and something ancient wants her crown… and her body. 💜</p>
+            <div class="mockRow" style="margin-top:12px">
+              <button class="btn btnPrimary" type="button">Start / Resume</button>
+              <button class="btn btnGhost" type="button">📚 Add to Library</button>
+              <button class="btn btnGhost" type="button">⭐ Rate</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Reviews</h3>
+            <div class="review">
+              <div class="mockRow" style="justify-content:space-between"><b>@readerrose</b><span class="fine">★★★★★</span></div>
+              <p style="margin:8px 0 0; color:var(--text)">The tension is unreal. The writing feels cinematic and intimate at the same time.</p>
+            </div>
+            <div class="review" style="margin-top:10px">
+              <div class="mockRow" style="justify-content:space-between"><b>@midnightmuse</b><span class="fine">★★★★☆</span></div>
+              <p style="margin:8px 0 0; color:var(--text)">Loved the pacing. That chapter ending made me gasp out loud.</p>
+            </div>
+            <div class="mockRow" style="margin-top:12px">
+              <button class="btn btnGhost" type="button">Write a review</button>
+              <button class="btn btnGhost" type="button">See all</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Chapters</h3>
+            <div class="chapList" role="list">
+              <div class="chapItem" role="listitem"><span class="chapNum">1</span><div class="chapText"><b>Chapter 1 — Whisper</b><div class="fine">12 min • 184 comments</div></div><button class="btn btnPrimary" type="button">Read</button></div>
+              <div class="chapItem" role="listitem"><span class="chapNum">2</span><div class="chapText"><b>Chapter 2 — The Watcher</b><div class="fine">10 min • 96 comments</div></div><button class="btn btnPrimary" type="button">Read</button></div>
+              <div class="chapItem" role="listitem"><span class="chapNum">3</span><div class="chapText"><b>Chapter 3 — Dreaming Hour</b><div class="fine">11 min • 121 comments</div></div><button class="btn btnPrimary" type="button">Read</button></div>
+              <div class="chapItem" role="listitem"><span class="chapNum">4</span><div class="chapText"><b>Chapter 4 — Marks</b><div class="fine">9 min • 77 comments</div></div><button class="btn btnPrimary" type="button">Read</button></div>
+              <div class="chapItem" role="listitem"><span class="chapNum">5</span><div class="chapText"><b>Chapter 5 — The Door</b><div class="fine">13 min • 209 comments</div></div><button class="btn btnPrimary" type="button">Read</button></div>
+              <div class="chapItem locked" role="listitem"><span class="chapNum">6</span><div class="chapText"><b>Chapter 6 — The Mark</b><div class="fine">Locked • Unlock to continue</div></div><button class="btn btnGhost" type="button">🔒 Unlock</button></div>
+            </div>
+            <p class="fine" style="margin-top:10px">Locked chapters unlock with coins or subscription depending on the book.</p>
+          </div>
+
+          <div class="card">
+            <h3>About the author</h3>
+            <div class="mockRow">
+              <div class="mockAvatar" aria-hidden="true"></div>
+              <div>
+                <b>Nyla Rivers</b>
+                <div class="fine">Dark romance • Paranormal • Slow burn</div>
+              </div>
+              <button class="btn btnGhost" type="button">Follow</button>
+            </div>
+            <p class="fine" style="margin-top:10px">Follow to get notified when new chapters drop or new books launch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reader">
+      <h2>Reader chapter view 🕯️</h2>
+      <p>The reading screen supports <b>both</b> scroll mode and page-flip mode, so readers can choose what feels best.</p>
+
+      <div class="card" style="margin-top:14px">
+        <div class="readerTop">
+          <div>
+            <b style="font-size:16px">Throne Beneath My Skin</b>
+            <div class="fine">Chapter 6 — The Mark</div>
+          </div>
+          <div class="seg" role="group" aria-label="Reading mode">
+            <button class="segBtn active" type="button">Scroll</button>
+            <button class="segBtn" type="button">Page Flip</button>
+          </div>
+        </div>
+
+        <div class="readerControls" style="margin-top:12px">
+          <button class="btn btnGhost" type="button">A-</button>
+          <button class="btn btnGhost" type="button">A+</button>
+          <button class="btn btnGhost" type="button">Line Spacing</button>
+          <button class="btn btnGhost" type="button">Bookmark</button>
+          <button class="btn btnGhost" type="button">📚 Library</button>
+        </div>
+
+        <div class="readerBody" style="margin-top:12px">
+          <p style="color:var(--text)">The air changed the moment I stepped over the threshold—like the hallway held its breath. My skin prickled, and the mark I’d been pretending didn’t exist pulsed beneath my sleeve… not pain, not exactly. More like a warning. Or a calling.</p>
+          <p style="color:var(--text)">Somewhere beyond the walls, something moved—quiet, patient, familiar in the way a nightmare feels familiar. I told myself it was the wind. I told myself a lot of lies lately.</p>
+          <p style="color:var(--text)"><span class="pill">Tip</span> In <b>Page Flip</b> mode, readers tap the left/right edges to turn pages like a hardcopy book.</p>
+        </div>
+
+        <div class="readerBottom" style="margin-top:14px">
+          <div class="progress" style="flex:1"><span style="width:38%"></span></div>
+          <span class="fine" style="min-width:110px; text-align:right">38% • 7 min left</span>
+        </div>
+
+        <div class="mockRow" style="margin-top:12px; justify-content:space-between">
+          <button class="btn btnGhost" type="button">◀ Prev</button>
+          <button class="btn btnPrimary" type="button">Next Chapter ▶</button>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="mockChapter">
+          <div class="mockRow" style="justify-content:space-between">
+            <b>Comments</b>
+            <span class="pill">End of chapter</span>
+          </div>
+          <p class="fine" style="margin-top:6px">Readers can react, suggest, and discuss — with spoiler protection and reporting.</p>
+
+          <div class="mockCommentBox">
+            <div class="mockRow" style="justify-content:space-between; align-items:center">
+              <b>Leave a comment</b>
+              <label class="fine" style="display:flex; gap:8px; align-items:center">
+                <input type="checkbox" style="min-width:auto; flex:0" /> Mark as spoiler
+              </label>
+            </div>
+            <textarea class="mockTextarea" placeholder="Your reaction, theory, or suggestion…" rows="3"></textarea>
+            <div class="mockRow" style="justify-content:space-between; margin-top:10px">
+              <span class="fine">Be respectful • No hate • No doxxing</span>
+              <button class="btn btnPrimary" type="button">Post</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="library">
+      <h2>Your Library 📚</h2>
+      <p>Readers can save books, pick up where they left off, and organize their stories into shelves like <b>Saved</b>, <b>Reading</b>, and <b>Finished</b>. (Mock preview below.)</p>
+
+      <div class="card" style="margin-top:14px">
+        <h3>Continue Reading</h3>
+        <div class="libRow">
+          <div class="libItem">
+            <div class="mockCover" aria-hidden="true"></div>
+            <div class="libMeta">
+              <b>Throne Beneath My Skin</b>
+              <div class="fine">Chapter 9 • 62% complete</div>
+              <div class="progress"><span style="width:62%"></span></div>
+            </div>
+            <button class="btn btnPrimary" type="button">Resume</button>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="shelfTabs" role="tablist" aria-label="Library shelves">
+          <span class="pill">Saved</span>
+          <span class="pill">Reading</span>
+          <span class="pill">Finished</span>
+          <span class="pill">Favorites</span>
+        </div>
+
+        <div class="shelfGrid" style="margin-top:12px">
+          <div class="shelfCard">
+            <div class="mockCover alt" aria-hidden="true"></div>
+            <div>
+              <b>Daughter of the Wolf Veil</b>
+              <div class="fine">Saved</div>
+            </div>
+          </div>
+          <div class="shelfCard">
+            <div class="mockCover" aria-hidden="true"></div>
+            <div>
+              <b>Whisper in the Thorns</b>
+              <div class="fine">Reading • Ch. 4</div>
+            </div>
+          </div>
+          <div class="shelfCard">
+            <div class="mockCover alt" aria-hidden="true"></div>
+            <div>
+              <b>The Dreaming Hour</b>
+              <div class="fine">Finished</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="fine" style="margin-top:10px">In the app, shelves update automatically as readers progress — and they can remove or favorite books anytime.</p>
+      </div>
+    </section>
+
+    <section id="search">
+      <h2>Search & Filters 🔎</h2>
+      <p>Readers can search by title, author, or keyword — then filter by genre, vibe, and access (free preview, coins, subscription).</p>
+
+      <div class="card" style="margin-top:14px">
+        <div class="searchBar">
+          <input type="text" placeholder="Search books, authors, tags…" aria-label="Search" />
+          <button class="btn btnPrimary" type="button">Search</button>
+        </div>
+
+        <div class="filterRow" style="margin-top:12px">
+          <span class="pill">Romance</span>
+          <span class="pill">Dark Romance</span>
+          <span class="pill">Paranormal</span>
+          <span class="pill">Sci‑Fi</span>
+          <span class="pill">Fantasy</span>
+          <span class="pill">Thriller</span>
+          <span class="pill">Poetry</span>
+          <span class="pill">Spicy Vault 😈</span>
+        </div>
+
+        <div class="filterRow" style="margin-top:10px">
+          <span class="pill">Free preview</span>
+          <span class="pill">Coins</span>
+          <span class="pill">Subscription</span>
+          <span class="pill">Completed</span>
+          <span class="pill">New drops</span>
+          <span class="pill">Trending</span>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="shelfGrid">
+          <div class="shelfCard">
+            <div class="mockCover" aria-hidden="true"></div>
+            <div>
+              <b>Thorns Between Us</b>
+              <div class="fine">Dark Romance • Free preview</div>
+              <div class="mockRow" style="margin-top:8px">
+                <button class="btn btnPrimary" type="button">Read</button>
+                <button class="btn btnGhost" type="button">📚 Add</button>
+              </div>
+            </div>
+          </div>
+          <div class="shelfCard">
+            <div class="mockCover alt" aria-hidden="true"></div>
+            <div>
+              <b>Her AI Man</b>
+              <div class="fine">Sci‑Fi Romance • Coins</div>
+              <div class="mockRow" style="margin-top:8px">
+                <button class="btn btnPrimary" type="button">Read</button>
+                <button class="btn btnGhost" type="button">📚 Add</button>
+              </div>
+            </div>
+          </div>
+          <div class="shelfCard">
+            <div class="mockCover" aria-hidden="true"></div>
+            <div>
+              <b>The Unbothered Fairy</b>
+              <div class="fine">Fantasy • New drops</div>
+              <div class="mockRow" style="margin-top:8px">
+                <button class="btn btnPrimary" type="button">Read</button>
+                <button class="btn btnGhost" type="button">📚 Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="fine" style="margin-top:10px">In the app, filters are interactive (tap to apply), and search results update instantly.</p>
+      </div>
     </section>
 
     <section id="pricing">
-      <h2>Reader access & pricing 🖤</h2>
+      <h2>Pricing 🪙</h2>
       <div class="pricing">
         <div class="price">
-          <h3>Standard Subscription</h3>
-          <div class="money">$7.99<span style="font-size:14px; color:var(--muted)">/mo</span></div>
+          <h3>Standard</h3>
+          <div class="money">$7.99<span style="font-size:14px; color:var(--muted)">/month</span></div>
           <ul>
-            <li>Unlimited reading</li>
-            <li>Access to exclusive stories</li>
-            <li>Early chapter drops</li>
-            <li>Community comments & follows</li>
+            <li>Unlimited standard reading</li>
+            <li>Exclusive stories + early drops</li>
+            <li>Community features</li>
           </ul>
         </div>
-        <div class="price" style="background: linear-gradient(180deg, rgba(245,197,66,.12), rgba(0,0,0,.18));">
-          <h3>Premium: Spicy Vault 😈</h3>
-          <div class="money">$12.99<span style="font-size:14px; color:var(--muted)">/mo</span></div>
+        <div class="price">
+          <h3>Spicy Vault 😈</h3>
+          <div class="money">$12.99<span style="font-size:14px; color:var(--muted)">/month</span></div>
           <ul>
-            <li>Everything in Standard</li>
-            <li>Erotica • BDSM • Dark romance • Supernatural heat</li>
-            <li>Premium exclusives & early releases</li>
-            <li>Opt-in adult content</li>
+            <li>Erotica, BDSM, dark romance</li>
+            <li>Supernatural heat + exclusives</li>
+            <li>Adult opt‑in access</li>
           </ul>
         </div>
       </div>
 
-      <div class="grid" style="margin-top:14px">
-        <div class="card"><h3>Welcome bonus 🎁</h3><p>New readers receive <b>150 free coins</b> when they sign up — no credit card required.</p></div>
-        <div class="card"><h3>Coin packs</h3><p>$1.99 → 300 coins<br>$4.99 → 500 coins<br>$9.99 → 800 coins</p></div>
-        <div class="card"><h3>Chapter pricing</h3><p>Chapters 1–5 are free.<br>Chapters 6+ unlock for <b>35 coins</b> each.</p></div>
+      <div class="card" style="margin-top:12px">
+        <h3>Coin packs</h3>
+        <p>$1.99 → 300 coins • $4.99 → 500 coins • $9.99 → 800 coins</p>
+        <p class="fine">Chapters unlock after the free preview period (typically ~35 coins per chapter).</p>
       </div>
     </section>
 
     <section id="authors" class="panel" style="padding:22px;">
-      <h2>Founding Authors waitlist 👑</h2>
-      <p>We’re launching with 10–20 Black indie authors across all genres. Founding Authors receive a permanent badge, higher early visibility, and priority support — while keeping full rights to their work.</p>
+      <h2>Become an Author ✍🏾</h2>
+      <p>If you’re a Black indie author and you’re ready to share your stories, Black Velvet Stories gives you a clean, respectful space to publish — with tools, community, and support.</p>
+
+      <details class="card" style="margin-top:12px">
+        <summary style="cursor:pointer; font-weight:700; color:var(--text)">See author benefits + onboarding</summary>
+        <div style="margin-top:10px; color:var(--muted); font-size:14px; line-height:1.6">
+          <ul>
+            <li><b>Author profile + follows:</b> readers can follow you and get notified when you post new chapters.</li>
+            <li><b>Creator dashboard:</b> upload chapters, schedule drops, track reads, and view earnings reports.</li>
+            <li><b>Early Author Badge:</b> for our first wave of creators (10–20) who launch with at least one story/novella and agree to promote.</li>
+            <li><b>Editorial support (optional):</b> access to paid editing/proofing support if you want help polishing your work before publishing.</li>
+            <li><b>Rights stay yours:</b> authors keep ownership of their work (details provided during onboarding).</li>
+          </ul>
+          <p class="fine">Payout structure and agreement details are shared inside the author onboarding/agreement portal.</p>
+        </div>
+      </details>
 
       <form id="waitlist" onsubmit="return submitWaitlist(event)">
         <div class="formRow">
@@ -245,49 +770,276 @@
             <option>Reader</option>
             <option>Both</option>
           </select>
-          <input name="genres" placeholder="Genres (e.g., romance, paranormal, sci‑fi)" />
+          <input name="genres" placeholder="Genres (e.g., romance, paranormal, sci-fi)" />
         </div>
         <div class="ctaRow">
-         <button class="btn btnPrimary" type="submit">Join the Launch List</button>
-          <a class="btn btnGhost" href="mailto:hello@yourdomain.com">Contact</a>
+          <button class="btn btnPrimary" type="submit">Request Author Access</button>
+          <a class="btn btnGhost" href="mailto:support@blackvelvetstories.com">Contact</a>
         </div>
         <p id="msg" class="fine" style="margin-top:10px"></p>
       </form>
-      <p class="fine">Tip: Replace <b>hello@yourdomain.com</b> with your real email and connect this form to Mailchimp/ConvertKit or a simple Firebase function.</p>
+      <p class="fine">Tip: When you’re ready, connect this form to Mailchimp/ConvertKit or a simple database so requests are stored automatically.</p>
+    </section>
+
+    <section id="profile">
+      <h2>Your Profile 👤</h2>
+      <p>A reader account keeps everything personal: saved books, followed authors, preferences, and reading settings.</p>
+
+      <div class="grid" style="margin-top:14px">
+        <div class="card">
+          <h3>Profile snapshot</h3>
+          <div class="mockRow">
+            <div class="mockAvatar" aria-hidden="true"></div>
+            <div>
+              <b>@VelvetReader</b>
+              <div class="fine">Reader • Dark romance lover</div>
+            </div>
+          </div>
+          <div class="mockRow" style="margin-top:12px">
+            <span class="pill">32 Books Saved</span>
+            <span class="pill">14 Authors Followed</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Following authors</h3>
+          <div class="miniShelf" style="margin-top:10px">
+            <div class="miniBook"><div class="miniCover" aria-hidden="true"></div><div><b>Nyla Rivers</b><div class="fine">Dark Romance</div></div></div>
+            <div class="miniBook"><div class="miniCover alt" aria-hidden="true"></div><div><b>J. Moon</b><div class="fine">Paranormal</div></div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Reading preferences</h3>
+          <div class="mockRow" style="margin-top:8px">
+            <span class="pill">Scroll Mode</span>
+            <span class="pill">Dark Theme</span>
+            <span class="pill">Bookmarks On</span>
+          </div>
+          <p class="fine" style="margin-top:10px">Readers can toggle reading mode, font size, notifications, and content preferences.</p>
+        </div>
+
+        <div class="card">
+          <h3>Spicy Vault access 😈</h3>
+          <p class="fine">Adult content is opt‑in and age‑verified for reader comfort.</p>
+          <div class="mockRow" style="margin-top:10px">
+            <button class="btn btnPrimary" type="button">Opt‑in</button>
+            <button class="btn btnGhost" type="button">Learn more</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="author-dashboard">
+      <h2>Author Dashboard (private) ✍🏾</h2>
+      <p>This area is <b>not visible to readers</b>. Authors access it only after approval and agreement — it includes publishing tools, review workflows, and private payout reporting.</p>
+
+      <div class="grid" style="margin-top:14px">
+        <div class="card">
+          <h3>Create a book</h3>
+          <p class="fine">Title, genre tags, cover, synopsis, content warnings, and whether it belongs in Spicy Vault 😈.</p>
+          <div class="mockRow" style="margin-top:10px">
+            <button class="btn btnPrimary" type="button">+ New Book</button>
+            <button class="btn btnGhost" type="button">Import (optional)</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Chapter publishing</h3>
+          <p class="fine">Write or paste chapters, schedule drops, and choose what’s readable vs locked (e.g., early chapters open, later chapters locked).</p>
+          <div class="miniShelf" style="margin-top:10px">
+            <div class="miniBook"><div class="miniCover" aria-hidden="true"></div><div><b>Chapter 5</b><div class="fine">Open • Scheduled</div></div></div>
+            <div class="miniBook"><div class="miniCover alt" aria-hidden="true"></div><div><b>Chapter 6</b><div class="fine">Locked • Draft</div></div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Reader engagement</h3>
+          <p class="fine">See ratings, reviews, and comments. Reply as the author, pin comments, and manage moderation.</p>
+          <div class="mockRow" style="margin-top:10px">
+            <span class="pill">Avg rating: 4.8</span>
+            <span class="pill">Comments: 1,204</span>
+            <span class="pill">Followers: 2,901</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Editorial workflow</h3>
+          <p class="fine">Optional review before publishing. Editors can leave notes, request revisions, and approve chapters/books.</p>
+          <div class="miniShelf" style="margin-top:10px">
+            <div class="miniBook"><div class="miniCover" aria-hidden="true"></div><div><b>Proofing</b><div class="fine">Editor notes pending</div></div></div>
+            <div class="miniBook"><div class="miniCover alt" aria-hidden="true"></div><div><b>Approved</b><div class="fine">Ready to publish</div></div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Payout reports (private)</h3>
+          <p class="fine">Authors view earnings reports and payout history here. This information is never shown to readers.</p>
+          <div class="mockRow" style="margin-top:10px">
+            <button class="btn btnGhost" type="button">View reports</button>
+            <button class="btn btnGhost" type="button">Payout settings</button>
+          </div>
+          <p class="fine" style="margin-top:10px">Tip: payouts can be handled via Stripe Connect (recommended) or other approved methods.</p>
+        </div>
+
+        <div class="card">
+          <h3>Team roles</h3>
+          <p class="fine">Invite collaborators: co-author, editor, proofreader. Control who can edit vs publish.</p>
+          <div class="mockRow" style="margin-top:10px">
+            <button class="btn btnPrimary" type="button">Invite editor</button>
+            <button class="btn btnGhost" type="button">Manage roles</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <h3>Editor pay (internal)</h3>
+        <p class="fine">Editors are paid through internal invoices or per-chapter/project rates. You can set rates by editor and track approvals. (Visible only to admin + editor.)</p>
+        <div class="mockRow" style="margin-top:10px">
+          <span class="pill">Per chapter</span>
+          <span class="pill">Per 1,000 words</span>
+          <span class="pill">Per project</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="admin">
+      <h2>Admin Dashboard (owner + staff only) 🛡️</h2>
+      <p>This is the control room for Black Velvet Stories. It’s <b>never visible to readers</b>. Admins manage approvals, moderation, refunds, and platform settings.</p>
+
+      <div class="grid" style="margin-top:14px">
+        <div class="card">
+          <h3>Author applications</h3>
+          <p class="fine">Review requests, verify identity, and approve author access. Send onboarding + agreement links privately.</p>
+          <div class="mockRow" style="margin-top:10px">
+            <span class="pill">12 pending</span>
+            <button class="btn btnPrimary" type="button">Review queue</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Content review</h3>
+          <p class="fine">Approve new books/chapters (if enabled), enforce content guidelines, and route adult content to Spicy Vault 😈.</p>
+          <div class="mockRow" style="margin-top:10px">
+            <span class="pill">Flags: 7</span>
+            <span class="pill">Vault checks: 4</span>
+            <button class="btn btnGhost" type="button">Open moderation</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Reports & moderation</h3>
+          <p class="fine">Handle reported comments, reviews, and books. Actions: hide, remove, warn, suspend.</p>
+          <div class="miniShelf" style="margin-top:10px">
+            <div class="miniBook"><div class="miniCover" aria-hidden="true"></div><div><b>Comment report</b><div class="fine">Harassment • Open</div></div></div>
+            <div class="miniBook"><div class="miniCover alt" aria-hidden="true"></div><div><b>Book report</b><div class="fine">Tagging • Needs review</div></div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Refunds & billing support</h3>
+          <p class="fine">Track issues: missing coins, duplicate charges, subscription activation. Keep receipts and resolve fast.</p>
+          <div class="mockRow" style="margin-top:10px">
+            <span class="pill">Open tickets: 5</span>
+            <button class="btn btnPrimary" type="button">Support inbox</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Editorial department</h3>
+          <p class="fine">Assign editors, set rates, track approvals, and pay editors (admin-only). Great for paying your mom and any hired editors.</p>
+          <div class="mockRow" style="margin-top:10px">
+            <button class="btn btnPrimary" type="button">Assign editor</button>
+            <button class="btn btnGhost" type="button">Rates & invoices</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Platform settings</h3>
+          <p class="fine">Manage coin packs, bonuses, subscription tiers, featured books, and homepage sections.</p>
+          <div class="mockRow" style="margin-top:10px">
+            <span class="pill">Coins</span>
+            <span class="pill">Subscriptions</span>
+            <span class="pill">Featured</span>
+            <span class="pill">Notifications</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <h3>Security & access</h3>
+        <p class="fine">Role-based access: Owner, Admin, Moderator, Editor, Author, Reader. MFA recommended for all staff accounts.</p>
+        <div class="mockRow" style="margin-top:10px">
+          <span class="pill">MFA</span>
+          <span class="pill">Audit logs</span>
+          <span class="pill">Role permissions</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy Policy 🔒</h2>
+      <p>Black Velvet Stories (“we,” “us”) respects your privacy. This policy explains what we collect and how we use it.</p>
+      <div class="grid">
+        <div class="card"><h3>What we collect</h3><p>Account details (email/display name), reading activity (progress/purchases), and content you choose to share (comments/reviews). Waitlist info if submitted.</p></div>
+        <div class="card"><h3>How we use it</h3><p>To operate the platform, personalize your experience, process payments, prevent fraud/abuse, communicate updates, and support authors and readers.</p></div>
+        <div class="card"><h3>Sharing</h3><p>We don’t sell personal information. We may share limited data with vendors (payments/email/analytics) to run the service, or when required by law.</p></div>
+      </div>
+      <div class="card" style="margin-top:12px"><h3>Your choices</h3><p>Opt out of marketing emails and request account deletion where applicable. Contact: <a href="mailto:support@blackvelvetstories.com">support@blackvelvetstories.com</a></p></div>
+      <p class="fine">MVP note: We’ll finalize this policy with your exact vendors before launch.</p>
+    </section>
+
+    <section id="terms">
+      <h2>Terms of Service 📜</h2>
+      <p>By using Black Velvet Stories, you agree to these terms. Please don’t use the platform if you don’t agree.</p>
+      <div class="grid">
+        <div class="card"><h3>Accounts</h3><p>You’re responsible for your account activity. Don’t share logins. We may suspend accounts for fraud, abuse, or policy violations.</p></div>
+        <div class="card"><h3>Payments & access</h3><p>Subscriptions and coins unlock content as described. Prices may change with notice. Refunds follow our policy and, on mobile, Apple/Google rules.</p></div>
+        <div class="card"><h3>Content ownership</h3><p>Authors keep ownership. Authors grant us a limited license to host and distribute their work on Black Velvet Stories.</p></div>
+      </div>
+      <div class="grid" style="margin-top:12px">
+        <div class="card"><h3>Community conduct</h3><p>No harassment, hate speech, doxxing, threats, or spam. We can remove content or restrict access to protect the community.</p></div>
+        <div class="card"><h3>Disclaimer</h3><p>Service is provided “as is.” We don’t guarantee uninterrupted access. Liability is limited to the extent allowed by law.</p></div>
+        <div class="card"><h3>Changes</h3><p>We may update these terms as the platform evolves. Continued use means you accept the updates.</p></div>
+      </div>
+      <p class="fine">Launch add-on: We’ll add a short refund policy + age/consent language for adult content access.</p>
+    </section>
+
+    <section id="refunds">
+      <h2>Refund Policy 💳</h2>
+      <p>We want Black Velvet Stories to feel fair and easy. Refunds depend on how you purchased and whether the content has been accessed.</p>
+      <div class="grid">
+        <div class="card"><h3>Web purchases (Stripe)</h3><p>Subscriptions: request within <b>7 days</b> of the charge if you haven’t meaningfully used the subscription. Coins: coin packs are generally <b>non-refundable</b> once delivered, but we’ll fix mistakes (duplicate charges, missing coins) fast.</p></div>
+        <div class="card"><h3>Mobile purchases (Apple/Google)</h3><p>If you purchase through the App Store or Google Play, refunds are handled under <b>Apple/Google policies</b>. We can help you find the right link and verify your receipt.</p></div>
+        <div class="card"><h3>Billing issues</h3><p>If coins don’t arrive, a subscription doesn’t activate, or you’re charged incorrectly, contact us and we’ll make it right. Email: <a href="mailto:support@blackvelvetstories.com">support@blackvelvetstories.com</a></p></div>
+      </div>
+      <p class="fine">We reserve the right to deny refunds in cases of fraud or abuse. This policy will be refined before launch based on your payment vendors.</p>
+    </section>
+
+    <section id="guidelines">
+      <h2>Content Guidelines 🖤</h2>
+      <p>We celebrate creative freedom while protecting readers, authors, and the community. These guidelines apply to books, covers, titles, and comments.</p>
+      <div class="grid">
+        <div class="card"><h3>Allowed (with labeling)</h3><p>All genres welcome, including dark romance, paranormal, sci‑fi, fantasy, thriller, and erotica/BDSM (Spicy Vault 😈) — with proper tags.</p></div>
+        <div class="card"><h3>Required tags & warnings</h3><p>Use genre tags and content warnings when relevant (violence, non‑consent themes, self‑harm references, etc.). Spicy Vault must be marked adult.</p></div>
+        <div class="card"><h3>Not allowed</h3><p>Child sexual content, sexual content involving minors, explicit incest, bestiality, instructions for violence/illegal harm, hate/harassment, or doxxing.</p></div>
+      </div>
+      <div class="grid" style="margin-top:12px">
+        <div class="card"><h3>Spicy Vault 😈</h3><p>Adult content is opt‑in and age‑gated. We may require edits, move content behind the vault, or deny publication if it violates policy.</p></div>
+        <div class="card"><h3>Review & enforcement</h3><p>We moderate content/comments as needed. Repeated violations can lead to removal, demonetization, or suspension.</p></div>
+        <div class="card"><h3>Reporting</h3><p>Readers can report content or comments. We investigate and take action to keep the community safe and fair.</p></div>
+      </div>
+      <p class="fine">Creators: if you’re unsure how to tag a scene, tag it. Transparency builds trust.</p>
     </section>
 
     <footer>
       <div class="hr"></div>
-      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center">
-        <div>© <span id="year"></span> Black Indie Reads • Built with love + receipts.</div>
-        <div class="fine">Privacy • Terms • Content Guidelines</div>
+      <div class="fine">
+        <a href="#privacy">Privacy</a> • <a href="#terms">Terms</a> • <a href="#refunds">Refund Policy</a> • <a href="#guidelines">Content Guidelines</a>
       </div>
-       <section id="about">
-  <h2>About Black Velvet Stories 💜</h2>
-  <p><strong>Black Velvet Stories was created from a simple belief:</strong> Black indie authors deserve a beautiful space to tell their stories, be seen, and be paid fairly.</p>
-  <p>For too long, writers have had to fight algorithms, confusing payout systems, and platforms that didn’t truly center their voices. This space was built to change that — not just another reading app, but a storytelling home where creativity, community, and fair opportunity come first.</p>
-  <p>Readers aren’t just consumers here. They discover new voices, support authors directly, and become part of a culture that values storytelling deeply.</p>
-
-  <div class="grid" style="margin-top:14px">
-    <div class="card">
-      <h3>Our mission</h3>
-      <p>Honor the storyteller. Support the reader. Build community — with a premium reading experience and transparent payouts.</p>
-    </div>
-    <div class="card">
-      <h3>Meet the Founder</h3>
-      <p>Founded by an indie author who understands both sides of the journey — the joy of creating and the frustration of platforms that don’t fully support creators.</p>
-    </div>
-    <div class="card">
-      <h3>Where we’re going</h3>
-      <p>Beyond reading: optional publishing support, professional editing, and a growing ecosystem that helps Black stories thrive.</p>
-    </div>
+      <div>© <span id="year"></span> Black Velvet Stories • Built with love + receipts.</div>
+    </footer>
   </div>
-
-  <p class="fine" style="margin-top:10px">Whether you’re here to read, write, or simply explore — you belong here. 🖤</p>
-</section>
-
-  </footer>
-<div>© <span id="year"></span> Black Velvet Stories • Built with love + receipts.</div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
