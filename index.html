@@ -1,7 +1,13 @@
 <!doctype html>
       <p class="fine">MVP note: We’ll finalize this policy with your exact vendors before launch.</p>
     </section>
-
+.hero{
+  background-image:
+    linear-gradient(rgba(11,7,16,.72), rgba(11,7,16,.88)),
+    url("https://picsum.photos/1400/900");
+  background-size: cover;
+  background-position: center;
+}
     <section id="terms">
       <h2>Terms of Service 📜</h2>
       <p>By using Black Velvet Stories, you agree to these terms. Please don’t use the platform if you don’t agree.</p>
@@ -67,7 +73,6 @@
       const form = e.target;
       const data = Object.fromEntries(new FormData(form).entries());
 
-      // Demo-only: shows success message. Connect to Mailchimp/ConvertKit/Firebase for real storage.
       const msg = document.getElementById('msg');
       msg.textContent = `You're in! We'll reach out at ${data.email}. (Demo form — connect to your email list next.)`;
       form.reset();
