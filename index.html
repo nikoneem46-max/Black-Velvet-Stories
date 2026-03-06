@@ -1,50 +1,20 @@
 <!doctype html>
+      </form>
+      <p class="fine">Tip: Connect this form to Mailchimp/ConvertKit or a database so requests are stored automatically.</p>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy Policy 🔒</h2>
+      <p>Black Velvet Stories (“we,” “us”) respects your privacy. This policy explains what we collect and how we use it.</p>
+      <div class="grid">
+        <div class="card"><h3>What we collect</h3><p>Account details (email/display name), reading activity (progress/purchases), and content you choose to share (comments/reviews). Waitlist info if submitted.</p></div>
+        <div class="card"><h3>How we use it</h3><p>To operate the platform, personalize your experience, process payments, prevent fraud/abuse, communicate updates, and support authors and readers.</p></div>
+        <div class="card"><h3>Sharing</h3><p>We don’t sell personal information. We may share limited data with vendors (payments/email/analytics) to run the service, or when required by law.</p></div>
+      </div>
+      <div class="card" style="margin-top:12px"><h3>Your choices</h3><p>Opt out of marketing emails and request account deletion where applicable. Contact: <a href="mailto:support@blackvelvetstories.com">support@blackvelvetstories.com</a></p></div>
       <p class="fine">MVP note: We’ll finalize this policy with your exact vendors before launch.</p>
     </section>
-.hero{
-  background-image:
-    linear-gradient(rgba(11,7,16,.72), rgba(11,7,16,.88)),
-    url("https://picsum.photos/1400/900");
-  background-size: cover;
-  background-position: center;
-}body{
-  margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--bg);
-  color:var(--text);
-  line-height:1.5;
-  position: relative;
-  overflow-x: hidden;
-}
 
-/* Full-page cinematic background image + velvet overlays */
-body::before{
-  content:"";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background-image: image-set(
-    url('hero-bg.webp') type('image/webp'),
-    url('hero-bg.jpg') type('image/jpeg')
-  );
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: .22;               /* increase to .28 if you want it bolder */
-  filter: saturate(1.05) contrast(1.05);
-  transform: scale(1.02);
-}
-
-body::after{
-  content:"";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(1200px 800px at 30% 10%, rgba(139,92,246,.28), transparent 60%),
-    radial-gradient(900px 700px at 80% 20%, rgba(245,197,66,.16), transparent 55%),
-    linear-gradient(180deg, rgba(11,7,16,.70), rgba(11,7,16,.92));
-}
     <section id="terms">
       <h2>Terms of Service 📜</h2>
       <p>By using Black Velvet Stories, you agree to these terms. Please don’t use the platform if you don’t agree.</p>
@@ -110,6 +80,7 @@ body::after{
       const form = e.target;
       const data = Object.fromEntries(new FormData(form).entries());
 
+      // Demo-only: shows success message. Connect to Mailchimp/ConvertKit/Firebase for real storage.
       const msg = document.getElementById('msg');
       msg.textContent = `You're in! We'll reach out at ${data.email}. (Demo form — connect to your email list next.)`;
       form.reset();
