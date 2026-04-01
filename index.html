@@ -1,14 +1,22 @@
 <!doctype html>
-      </form>
-      <p class="fine">form name="author-interest" method="POST" data-netlify="true">
+          </select>
+          <input name="genres" placeholder="Genres (e.g., paranormal, supernatural, romance)" />
+        </div>
+        <div class="ctaRow">
+          <button class="btn btnPrimary" type="submit">Request Author Access</button>
+          <a class="btn btnGhost" href="mailto:support@blackvelvetstories.com">Contact</a>
+        </div>
+        <p id="msg" class="fine" style="margin-top:10px"></p>
+      </form> name="author-interest" method="POST" data-netlify="true">
   <input type="hidden" name="form-name" value="author-interest" />
-  
+
   <input type="text" name="name" placeholder="Your name" />
   <input type="email" name="email" placeholder="Your email" />
   <textarea name="message" placeholder="Tell us about your writing"></textarea>
-  
+
   <button type="submit">Submit</button>
-</form>.</p>
+</form>
+      <p class="fine"> .</p>
     </section>
 
     <section id="privacy">
@@ -88,12 +96,13 @@
       const form = e.target;
       const data = Object.fromEntries(new FormData(form).entries());
 
-      // Demo-only: shows success message. Connect to Mailchimp/ConvertKit/Firebase for real storage.
+    
       const msg = document.getElementById('msg');
-      msg.textContent = `You're in! We'll reach out at ${data.email}. (Demo form — connect to your email list next.)`;
+      msg.textContent = `You're in! We'll reach out at ${data.email}. (email for questions at blackvelvetstories1@gmail.com.)`;
       form.reset();
       return false;
     }
   </script>
 </body>
 </html>
+
