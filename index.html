@@ -342,23 +342,82 @@
       </div>
     </section>
 
-    <section id="authors" class="panel" style="padding:22px;">
-      <h2>Become an Author ✍🏾</h2>
-      <p>Black Velvet Stories is open to Black indie authors across all genres — and we’re especially excited to launch with paranormal and supernatural voices. If you’re ready to publish, apply for author access.</p>
-</form>
+  <section id="author-access" class="card">
+  <h2>Become an Author</h2>
+  <p>
+    Submit your first chapter for review. If approved, you can continue uploading the rest of your story.
+  </p>
 
-      <details class="card" style="margin-top:12px">
-        <summary style="cursor:pointer; font-weight:700; color:var(--text)">See what authors get</summary>
-        <div style="margin-top:10px; color:var(--muted); font-size:14px; line-height:1.6">
-          <ul>
-            <li><b>Author profile + follows:</b> readers can follow you and get notified when you post.</li>
-            <li><b>Creator dashboard:</b> upload chapters, schedule drops, and track engagement.</li>
-            <li><b>Early Author Badge:</b> for our first wave of creators.</li>
-            <li><b>Editorial support (optional):</b> paid proofing/editing support if you want help polishing.</li>
-            <li><b>Rights stay yours:</b> authors keep ownership (full details during onboarding).</li>
-          </ul>
-          <p class="fine">Creator agreement details are provided during onboarding.</p>
-        </div>
+  <form
+    name="author-application"
+    method="POST"
+    data-netlify="true"
+    enctype="multipart/form-data"
+  >
+    <input type="hidden" name="form-name" value="author-application" />
+
+    <p>
+      <label>Full Name<br />
+        <input type="text" name="full_name" required />
+      </label>
+    </p>
+
+    <p>
+      <label>Email<br />
+        <input type="email" name="email" required />
+      </label>
+    </p>
+
+    <p>
+      <label>Pen Name / Author Name<br />
+        <input type="text" name="pen_name" />
+      </label>
+    </p>
+
+    <p>
+      <label>Primary Genre<br />
+        <select name="primary_genre" required>
+          <option value="">Select one</option>
+          <option>Paranormal Romance</option>
+          <option>Dark Romance</option>
+          <option>Fantasy</option>
+          <option>Sci-Fi Romance</option>
+          <option>Urban Fantasy</option>
+          <option>Thriller</option>
+          <option>Poetry</option>
+          <option>Contemporary Romance</option>
+          <option>Other</option>
+        </select>
+      </label>
+    </p>
+
+    <p>
+      <label>Story Title<br />
+        <input type="text" name="story_title" required />
+      </label>
+    </p>
+
+    <p>
+      <label>Short Synopsis<br />
+        <textarea name="synopsis" rows="5" required></textarea>
+      </label>
+    </p>
+
+    <p>
+      <label>Upload First Chapter (.doc, .docx, .pdf)<br />
+        <input type="file" name="first_chapter" accept=".doc,.docx,.pdf" required />
+      </label>
+    </p>
+
+    <p class="small-note">
+      First chapters are reviewed before a story is approved for full upload. Authors may receive editing suggestions or revision requests before publication. Once approved, authors may continue uploading chapters.
+    </p>
+
+    <p>
+      <button type="submit">Request Author Access</button>
+    </p>
+  </form>
+</section>
       </details>
 
       <form id="waitlist" onsubmit="return submitWaitlist(event)">
