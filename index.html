@@ -412,14 +412,88 @@
     <p class="small-note">
       First chapters are reviewed before a story is approved for full upload. Authors may receive editing suggestions or revision requests before publication. Once approved, authors may continue uploading chapters.
     </p>
+<section id="chapter-upload" class="card">
+  <h2>Approved Author Chapter Upload</h2>
+  <p>
+    If your story has already been approved, use this form to upload new chapters.
+    Once your book is marked <strong>Completed</strong>, it can move to final review or editorial feedback.
+  </p>
 
+  <form
+    name="approved-chapter-upload"
+    method="POST"
+    data-netlify="true"
+    enctype="multipart/form-data"
+  >
+    <input type="hidden" name="form-name" value="approved-chapter-upload" />
+
+    <p>
+      <label>Author Email<br />
+        <input type="email" name="author_email" required />
+      </label>
+    </p>
+
+    <p>
+      <label>Pen Name / Author Name<br />
+        <input type="text" name="pen_name" required />
+      </label>
+    </p>
+
+    <p>
+      <label>Story Title<br />
+        <input type="text" name="story_title" required />
+      </label>
+    </p>
+
+    <p>
+      <label>Chapter Number<br />
+        <input type="number" name="chapter_number" min="1" required />
+      </label>
+    </p>
+
+    <p>
+      <label>Chapter Title<br />
+        <input type="text" name="chapter_title" required />
+      </label>
+    </p>
+
+    <p>
+      <label>Upload Chapter File (.doc or .docx preferred, .pdf accepted)<br />
+        <input type="file" name="chapter_file" accept=".doc,.docx,.pdf" required />
+      </label>
+    </p>
+
+    <p>
+      <label>Story Status<br />
+        <select name="story_status" required>
+          <option value="">Select status</option>
+          <option>Ongoing</option>
+          <option>Completed</option>
+        </select>
+      </label>
+    </p>
+
+    <p>
+      <label>Optional Notes<br />
+        <textarea name="author_notes" rows="4" placeholder="Anything you'd like us to know about this upload?"></textarea>
+      </label>
+    </p>
+
+    <p class="small-note">
+      Approved authors may continue uploading chapters freely. When a story is marked <strong>Completed</strong>, Black Velvet Stories may conduct a final review and provide editorial feedback or revision requests if needed.
+    </p>
+
+    <p>
+      <button type="submit">Upload Chapter</button>
+    </p>
+  </form>
+</section>
     <p>
       <button type="submit">Request Author Access</button>
     </p>
   </form>
 </section>
-      
-      <div class="formRow">
+       <div class="formRow">
         <a class="btn btnGhost" href="mailto:support@blackvelvetstories.com">Contact</a>
       </div>
       <p class="fine" style="margin-top:10px">
