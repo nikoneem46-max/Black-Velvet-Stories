@@ -343,12 +343,15 @@
       </div>
     </section>
 
-  <section id="author-access">Become an Author</a>
-    <p>
+<section id="author-access" class="card">
+  <h2>Become an Author</h2>
+
+  <p>
     Submit your first chapter for review. If approved, you can continue uploading the rest of your story.
   </p>
 
   <form
+    id="authorApplicationForm"
     name="author-application"
     method="POST"
     data-netlify="true"
@@ -358,25 +361,25 @@
 
     <p>
       <label>Full Name<br />
-        <input type="text" name="full_name" required />
+        <input id="full_name" type="text" name="full_name" required />
       </label>
     </p>
 
     <p>
       <label>Email<br />
-        <input type="email" name="email" required />
+        <input id="email" type="email" name="email" required />
       </label>
     </p>
 
     <p>
       <label>Pen Name / Author Name<br />
-        <input type="text" name="pen_name" />
+        <input id="pen_name" type="text" name="pen_name" />
       </label>
     </p>
 
     <p>
       <label>Primary Genre<br />
-        <select name="primary_genre" required>
+        <select id="genre" name="primary_genre" required>
           <option value="">Select one</option>
           <option>Paranormal Romance</option>
           <option>Dark Romance</option>
@@ -393,33 +396,42 @@
 
     <p>
       <label>Story Title<br />
-        <input type="text" name="story_title" required />
+        <input id="story_title" type="text" name="story_title" required />
       </label>
     </p>
 
     <p>
       <label>Short Synopsis<br />
-        <textarea name="synopsis" rows="5" required></textarea>
+        <textarea id="story_pitch" name="synopsis" rows="5" required></textarea>
       </label>
     </p>
 
     <p>
       <label>Upload First Chapter (.doc, .docx, .pdf)<br />
-        <input type="file" name="first_chapter" accept=".doc,.docx,.pdf" required />
+        <input id="sample_file" type="file" name="first_chapter" accept=".doc,.docx,.pdf" required />
       </label>
     </p>
 
     <p class="small-note">
       First chapters are reviewed before a story is approved for full upload. Authors may receive editing suggestions or revision requests before publication. Once approved, authors may continue uploading chapters.
     </p>
+
+    <p>
+      <button type="submit">Request Author Access</button>
+    </p>
+  </form>
+</section>
+
 <section id="chapter-upload" class="card">
   <h2>Approved Author Chapter Upload</h2>
+
   <p>
     If your story has already been approved, use this form to upload new chapters.
     Once your book is marked <strong>Completed</strong>, it can move to final review or editorial feedback.
   </p>
 
   <form
+    id="chapterUploadForm"
     name="approved-chapter-upload"
     method="POST"
     data-netlify="true"
@@ -488,17 +500,14 @@
     </p>
   </form>
 </section>
-    <p>
-      <button type="submit">Request Author Access</button>
-    </p>
-  </form>
-</section>
-       <div class="formRow">
-        <a class="btn btnGhost" href="mailto:support@blackvelvetstories.com">Contact</a>
-      </div>
-      <p class="fine" style="margin-top:10px">
-        Need help? <a href="mailto:blackvelvetstories1@gmail.com">blackvelvetstories1@gmail.com</a>
-      </p>
+
+<div class="formRow">
+  <a class="btn btnGhost" href="mailto:support@blackvelvetstories.com">Contact</a>
+</div>
+
+<p class="fine" style="margin-top:10px">
+  Need help? <a href="mailto:blackvelvetstories1@gmail.com">blackvelvetstories1@gmail.com</a>
+</p>
     
     </section>
 
@@ -579,12 +588,73 @@
       const form = e.target;
       const data = Object.fromEntries(new FormData(form).entries());
 
-      // Demo-only: shows success message. Connect to Mailchimp/ConvertKit/Firebase for real storage.
       const msg = document.getElementById('msg');
       msg.textContent = `You're in! We'll reach out at ${data.email}. (Demo form — connect to your email list next.)`;
       form.reset();
       return false;
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+  const SUPABASE_URL = "https://sdunpgcclttkrexzezzv.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_LZB_U-_dfBx70spYekgrFw_mZ5C0iRN";
+
+  const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  const authorForm = document.querySelector("#authorApplicationForm");
+
+  if (authorForm) {
+    authorForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const fullName = document.querySelector("#full_name").value.trim();
+      const email = document.querySelector("#email").value.trim();
+      const penName = document.querySelector("#pen_name").value.trim();
+      const genre = document.querySelector("#genre").value.trim();
+      const storyTitle = document.querySelector("#story_title").value.trim();
+      const storyPitch = document.querySelector("#story_pitch").value.trim();
+      const sampleFile = document.querySelector("#sample_file").files[0];
+
+      let sampleFileUrl = "";
+
+      if (sampleFile) {
+        const filePath = `${Date.now()}-${sampleFile.name}`;
+
+        const { error: uploadError } = await supabaseClient.storage
+          .from("author-samples")
+          .upload(filePath, sampleFile);
+
+        if (uploadError) {
+          alert("Sample upload failed: " + uploadError.message);
+          return;
+        }
+
+        sampleFileUrl = filePath;
+      }
+
+      const { error } = await supabaseClient
+        .from("author_applications")
+        .insert({
+          full_name: fullName,
+          email: email,
+          pen_name: penName,
+          genre: genre,
+          story_pitch: storyTitle + " — " + storyPitch,
+          sample_file_url: sampleFileUrl,
+          status: "pending"
+        });
+
+      if (error) {
+        alert("Application failed: " + error.message);
+        return;
+      }
+
+      alert("Application submitted successfully!");
+      authorForm.reset();
+    });
+  }
+</script>
+  
 </body>
 </html>
