@@ -277,7 +277,7 @@
 
         <div class="ctaRow">
           <a class="btn btnPrimary" href="#pricing">Start reading →</a>
-          <a class="btn btnGhost" href="#author-access">Want to publish here?</a>
+         <a class="btn btnGhost" href="#author-access">Want to publish here?</a>
         </div>
       </div>
 
@@ -350,15 +350,31 @@
     Submit your first chapter for review. If approved, you can continue uploading the rest of your story.
   </p>
 
+ <div style="margin: 18px 0 24px; padding: 16px; border: 1px solid rgba(245,197,66,.45); border-radius: 16px; background: rgba(245,197,66,.10);">
+  <p style="margin: 0 0 10px; color: #f5c542; font-weight: 700;">
+    Already approved or ready to upload chapters?
+  </p>
+
+  <a 
+    href="author-dashboard.html" 
+    style="display: inline-block; padding: 12px 18px; border-radius: 14px; background: #f5c542; color: #16051f; font-weight: 800; text-decoration: none;"
+  >
+    Go to Author Dashboard →
+  </a>
+</div>
+
   <form
-    id="authorApplicationForm"
+    
     name="author-application"
     method="POST"
     data-netlify="true"
+    data-netlify-honeypot="bot-field"
     enctype="multipart/form-data"
+    action="/thank-you.html"
   >
     <input type="hidden" name="form-name" value="author-application" />
-
+    <p style="display:none;">
+      <label>Don’t fill this out: <input name="bot-field" /></label>
     <p>
       <label>Full Name<br />
         <input id="full_name" type="text" name="full_name" required />
@@ -406,19 +422,34 @@
       </label>
     </p>
 
-    <p>
-      <label>Upload First Chapter (.doc, .docx, .pdf)<br />
-        <input id="sample_file" type="file" name="first_chapter" accept=".doc,.docx,.pdf" required />
-      </label>
-    </p>
+   <p>
+  <label>Upload First Chapter (.doc, .docx, .pdf)<br />
+    <input id="sample_file" type="file" name="first_chapter" accept=".doc,.docx,.pdf" />
+  </label>
+</p>
 
+<p style="text-align:center; font-weight:bold;">
+  OR
+</p>
+
+<p>
+  <label>First Chapter Link<br />
+    <input 
+      id="chapter_link" 
+      type="url" 
+      name="first_chapter_link" 
+      placeholder="Paste a Google Docs, Dropbox, or file link here"
+    />
+  </label>
+</p>
     <p class="small-note">
+     Submit your first chapter sample as a .doc, .docx, or .pdf file. If you prefer, you may paste a chapter link instead.
       First chapters are reviewed before a story is approved for full upload. Authors may receive editing suggestions or revision requests before publication. Once approved, authors may continue uploading chapters.
     </p>
 
-    <p>
-      <button type="submit">Request Author Access</button>
-    </p>
+  <p>
+  <button type="submit" class="btn">Submit Application</button>
+</p>
   </form>
 </section>
 
@@ -454,7 +485,7 @@
         <div class="card"><h3>Disclaimer</h3><p>Service is provided “as is.” We don’t guarantee uninterrupted access. Liability is limited to the extent allowed by law.</p></div>
         <div class="card"><h3>Changes</h3><p>We may update these terms as the platform evolves. Continued use means you accept the updates.</p></div>
       </div>
-      <p class="fine">Launch add-on: We’ll add age/consent language for adult content access.</p>
+     
     </section>
 
     <section id="refunds">
